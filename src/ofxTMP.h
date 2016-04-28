@@ -13,4 +13,4 @@
 #include "ofxTMPFunctionTraits.h"
 #include "ofxTMPSequence.h"
 
-using ofxTMP = ofx::TMP;
+namespace ofxTMP = ofx::TMP;
