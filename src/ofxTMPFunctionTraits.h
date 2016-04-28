@@ -22,6 +22,10 @@ namespace ofx {
                     template <std::size_t index>
                     using argument_type = type_at<index, arguments ...>;
                     using function_type = std::function<ret(arguments ...)>;
+                    template <typename function_t>
+                    static constexpr function_type cast(function_t f) {
+                        return static_cast<function_type>(f);
+                    }
                 };
             };
             
@@ -75,6 +79,12 @@ namespace ofx {
             constexpr bool is_callable(const patient &) {
                 return std::is_function<patient>::value || has_call_operator<patient>::value;
             };
+            
+            template <typename function_t>
+            constexpr auto cast_lambda(function_t f)
+            -> typename function_traits<function_t>::function_type {
+                return static_cast<typename function_traits<function_t>::function_type>(f);
+            }
         };
         using namespace function_info;
     };
