@@ -26,7 +26,7 @@ namespace ofx {
             };
             
             template <typename T>
-            struct function_traits : public function_info<decltype(&T::operator())> {};
+            struct function_traits : public function_traits<decltype(&T::operator())> {};
             
             template <typename class_type, typename ret, typename ... arguments>
             struct function_traits<ret(class_type::*)(arguments ...) const>
