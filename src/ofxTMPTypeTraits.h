@@ -17,10 +17,10 @@ namespace ofx {
             static constexpr bool has_subscript_operator = false;
         };
         
-        template <size_t size, typename T = float>
+        template <std::size_t size_, typename T = float>
         struct array_traits {
             using inner_type = T;
-            static constexpr size_t size = size;
+            static constexpr std::size_t size = size_;
             static constexpr bool has_subscript_operator = true;
         };
         
