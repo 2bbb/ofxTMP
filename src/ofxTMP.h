@@ -12,5 +12,6 @@
 #include "ofxTMPTypeTraits.h"
 #include "ofxTMPFunctionTraits.h"
 #include "ofxTMPSequence.h"
+#include "ofxTMPAlias.h"
 
 namespace ofxTMP = ofx::TMP;

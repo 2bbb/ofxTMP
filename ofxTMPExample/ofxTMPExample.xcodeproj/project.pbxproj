@@ -47,6 +47,7 @@
 		95F4482B1CD1EA1600BE7825 /* ofxTMPFunctionTraits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTMPFunctionTraits.h; sourceTree = "<group>"; };
 		95F4482C1CD1EAB500BE7825 /* ofxTMPUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTMPUtils.h; sourceTree = "<group>"; };
 		95F4482D1CD1EBF500BE7825 /* ofxTMPSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTMPSequence.h; sourceTree = "<group>"; };
+		95F448401CD35A7200BE7825 /* ofxTMPAlias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTMPAlias.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* ofxTMPExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofxTMPExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
@@ -92,6 +93,7 @@
 				95F448291CD1E98200BE7825 /* ofxTMPTypeTraits.h */,
 				95F4482B1CD1EA1600BE7825 /* ofxTMPFunctionTraits.h */,
 				95F4482D1CD1EBF500BE7825 /* ofxTMPSequence.h */,
+				95F448401CD35A7200BE7825 /* ofxTMPAlias.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
