@@ -12,18 +12,25 @@ class ofApp : public ofBaseApp {
         return eval(ofxTMP::cast_lambda(f));
     }
     
-    template <typename T>
-    typename ofxTMP::type_traits<T>::inner_type calc_sum(const T &v) {
-        typename ofxTMP::type_traits<T>::inner_type sum{};
+    
+    // summation
+    template <typename R, typename T>
+    R calc_sum(const T &v) {
+        R sum{0};
         for(std::size_t i = 0; i < ofxTMP::type_traits<T>::size; i++) {
             sum += v[i];
         }
         return sum;
     }
     
+    template <typename T>
+    typename ofxTMP::type_traits<T>::inner_type calc_sum(const T &v) {
+        return calc_sum<typename ofxTMP::type_traits<T>::inner_type, T>(v);
+    }
+    
 public:
     void setup() {
-        ofLogNotice() << "version macro";
+        ofLogNotice() << "==== version macro ====";
         
         ofLogNotice("current of version") << OFX_OF_VERSION;
         ofLogNotice("version 0.9.3") << OFX_MAKE_OF_VERSION(0, 9, 3);
@@ -46,7 +53,7 @@ public:
         
         std::cout << std::endl;
         
-        ofLogNotice() << "type traits";
+        ofLogNotice() << "==== type traits ====";
         ofVec2f v2 = {1.0f, 2.0f};
         ofVec3f v3 = {1.0f, 2.0f, 3.0f};
         ofVec4f v4 = {1.0f, 2.0f, 3.0f, 4.0f};
@@ -57,11 +64,12 @@ public:
         ofLogNotice("ofVec3f") << calc_sum(v3);
         ofLogNotice("ofVec4f") << calc_sum(v4);
         ofLogNotice("ofFloatColor") << calc_sum(fc);
-        ofLogNotice("overflow") << (int)calc_sum(c);
+        ofLogNotice("ofColor [overflow]") << calc_sum(c);
+        ofLogNotice("ofColor [not overflow!]") << calc_sum<int>(c);
         
         std::cout << std::endl;
         
-        ofLogNotice() << "function traits";
+        ofLogNotice() << "==== function traits ====";
         ofLogNotice("call directly") << eval(ofxTMP::cast_lambda([](){ return 8; }));
         ofLogNotice("wrap the method") << eval([](){ return 8; });
         
